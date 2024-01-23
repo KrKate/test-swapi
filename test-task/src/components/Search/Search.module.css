@@ -1,8 +1,8 @@
 .searchContainer {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .searchButton {
-    padding: 0.2rem;
+  padding: 0.2rem;
 }
