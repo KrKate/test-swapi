@@ -1,9 +1,5 @@
 function App() {
-  return (
-    <>
-     Start task
-    </>
-  )
+  return <div>Start task</div>;
 }
 
-export default App
+export default App;
