@@ -9,10 +9,18 @@ class App extends React.Component {
     CharacterData: [],
   };
 
+  componentDidMount() {
+    const storedData = localStorage.getItem('CharacterData');
+    if (storedData) {
+      this.setState({ CharacterData: JSON.parse(storedData) });
+    }
+  }
+
   handleSearch = (characterName: string) => {
     searchCharacter(characterName)
       .then((data) => {
         this.setState({ CharacterData: data.results });
+        localStorage.setItem('CharacterData', JSON.stringify(data.results));
       })
       .catch((error) => console.log(error));
   };
