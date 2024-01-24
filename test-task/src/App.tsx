@@ -7,6 +7,7 @@ import { searchCharacter } from './api/api';
 class App extends React.Component {
   state = {
     CharacterData: [],
+    isLoading: false,
   };
 
   componentDidMount() {
@@ -17,9 +18,10 @@ class App extends React.Component {
   }
 
   handleSearch = (characterName: string) => {
+    this.setState({ isLoading: true });
     searchCharacter(characterName)
       .then((data) => {
-        this.setState({ CharacterData: data.results });
+        this.setState({ CharacterData: data.results, isLoading: false });
         localStorage.setItem('CharacterData', JSON.stringify(data.results));
       })
       .catch((error) => console.log(error));
@@ -29,7 +31,10 @@ class App extends React.Component {
     return (
       <div className={styles.appContainer}>
         <Header onSearch={this.handleSearch} />
-        <Main characterData={this.state.CharacterData} />
+        <Main
+          characterData={this.state.CharacterData}
+          isLoading={this.state.isLoading}
+        />
       </div>
     );
   }

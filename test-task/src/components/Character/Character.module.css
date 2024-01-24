@@ -1,22 +1,22 @@
 h1 {
-    font-size: 1.7rem;
-    padding-bottom: 0.5rem;
+  font-size: 1.7rem;
+  padding-bottom: 0.5rem;
 }
 
 h4 {
-    color: blueviolet;
+  color: blueviolet;
 }
 
 ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 li {
-    display: flex;
-    gap: 0.3rem;
+  display: flex;
+  gap: 0.3rem;
 }
 
 .card {
@@ -34,7 +34,7 @@ li {
 }
 
 .card:hover {
-    background-color: rgb(239, 230, 240);
-    border: 1px solid blueviolet;
-    box-shadow: none;
+  background-color: rgb(239, 230, 240);
+  border: 1px solid blueviolet;
+  box-shadow: none;
 }
