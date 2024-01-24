@@ -23,13 +23,31 @@ class Character extends React.Component<CharacterProps> {
       <div className={styles.card}>
         <h1>{characterData.name}</h1>
         <ul>
-          <li>Height: {characterData.height}</li>
-          <li>Mass: {characterData.mass}</li>
-          <li>Hair color: {characterData.hair_color}</li>
-          <li>Skin color: {characterData.skin_color}</li>
-          <li>Eye color: {characterData.eye_color}</li>
-          <li>Birth year: {characterData.birth_year}</li>
-          <li>Gender: {characterData.gender}</li>
+          <li>
+            <h4>Height: </h4> <span>{characterData.height}</span>
+          </li>
+          <li>
+            <h4>Mass: </h4> <span>{characterData.mass}</span>
+          </li>
+          <li>
+            <h4>Hair color: </h4>
+            <span>{characterData.hair_color}</span>
+          </li>
+          <li>
+            <h4>Skin color: </h4> <span>{characterData.skin_color}</span>
+          </li>
+          <li>
+            <h4>Eye color: </h4>
+            <span>{characterData.eye_color}</span>
+          </li>
+          <li>
+            <h4>Birth year: </h4>
+            <span>{characterData.birth_year}</span>
+          </li>
+          <li>
+            <h4>Gender: </h4>
+            <span>{characterData.gender}</span>
+          </li>
         </ul>
       </div>
     );

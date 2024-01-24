@@ -1,8 +1,22 @@
+input {
+    padding: 2px;
+    min-height: 2rem;
+    border-radius: 0.5rem;
+}
+
+
 .searchContainer {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .searchButton {
-  padding: 0.2rem;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    background-color: greenyellow;
+    transition: all 0.2s ease;
+}
+
+.searchButton:hover {
+    background-color: rgb(29, 208, 20);
 }
