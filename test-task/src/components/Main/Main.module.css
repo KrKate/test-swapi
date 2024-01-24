@@ -6,3 +6,19 @@
   padding: 1rem;
   gap: 1rem;
 }
+
+img {
+ height: 70vh;
+ align-items: center;
+}
+
+h2 {
+    padding: 1rem;
+}
+
+.welcomeWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

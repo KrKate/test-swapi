@@ -16,6 +16,14 @@ input {
   transition: all 0.2s ease;
 }
 
+.searchButton:disabled {
+    background-color: rgb(174, 170, 170);
+}
+
+.searchButton:disabled:hover {
+    background-color: rgb(174, 170, 170);
+}
+
 .searchButton:hover {
   background-color: rgb(29, 208, 20);
 }

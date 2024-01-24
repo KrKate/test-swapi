@@ -22,10 +22,14 @@ class Search extends React.Component<SearchProps, SearchState> {
 
   handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    this.props.onSearch(this.state.searchValue);
+    if (this.state.searchValue) {
+      this.props.onSearch(this.state.searchValue);
+    }
   };
 
   render() {
+    const { searchValue } = this.state;
+    const isSearchDisabled = searchValue === '';
     return (
       <form className={styles.searchContainer} onSubmit={this.handleSubmit}>
         <input
@@ -34,7 +38,11 @@ class Search extends React.Component<SearchProps, SearchState> {
           value={this.state.searchValue}
           onChange={this.handleChange}
         />
-        <button className={styles.searchButton} type="submit">
+        <button
+          className={styles.searchButton}
+          type="submit"
+          disabled={isSearchDisabled}
+        >
           Search
         </button>
       </form>

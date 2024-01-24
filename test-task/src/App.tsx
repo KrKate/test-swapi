@@ -8,6 +8,7 @@ class App extends React.Component {
   state = {
     CharacterData: [],
     isLoading: false,
+    isSearchStarted: false,
   };
 
   componentDidMount() {
@@ -18,11 +19,15 @@ class App extends React.Component {
   }
 
   handleSearch = (characterName: string) => {
-    this.setState({ isLoading: true });
+    this.setState({ isLoading: true, isSearchStarted: true });
     searchCharacter(characterName)
       .then((data) => {
-        this.setState({ CharacterData: data.results, isLoading: false });
+        this.setState({
+          CharacterData: data.results,
+          isLoading: false,
+        });
         localStorage.setItem('CharacterData', JSON.stringify(data.results));
+        this.setState({ isLocalStrageEmpty: false });
       })
       .catch((error) => console.log(error));
   };
@@ -34,6 +39,7 @@ class App extends React.Component {
         <Main
           characterData={this.state.CharacterData}
           isLoading={this.state.isLoading}
+          isSearchStarted={this.state.isSearchStarted}
         />
       </div>
     );
