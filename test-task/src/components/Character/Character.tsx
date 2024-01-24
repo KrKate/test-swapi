@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Character.module.css';
 
 export interface People {
   name: string;
@@ -18,7 +19,20 @@ export interface CharacterProps {
 class Character extends React.Component<CharacterProps> {
   render() {
     const { characterData } = this.props;
-    return <h1>{characterData.name}</h1>;
+    return (
+      <div className={styles.card}>
+        <h1>{characterData.name}</h1>
+        <ul>
+          <li>Height: {characterData.height}</li>
+          <li>Mass: {characterData.mass}</li>
+          <li>Hair color: {characterData.hair_color}</li>
+          <li>Skin color: {characterData.skin_color}</li>
+          <li>Eye color: {characterData.eye_color}</li>
+          <li>Birth year: {characterData.birth_year}</li>
+          <li>Gender: {characterData.gender}</li>
+        </ul>
+      </div>
+    );
   }
 }
 
