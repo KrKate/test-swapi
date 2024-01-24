@@ -1,9 +1,19 @@
 import React from 'react';
 import styles from './Main.module.css';
-
-class Main extends React.Component {
+import Character, { People } from '../Character/Character';
+interface MainProps {
+  characterData: People[];
+}
+class Main extends React.Component<MainProps> {
   render() {
-    return <main className={styles.main}></main>;
+    const { characterData } = this.props;
+    return (
+      <main className={styles.main}>
+        {characterData.map((character: People) => (
+          <Character key={character.name} characterData={character} />
+        ))}
+      </main>
+    );
   }
 }
 
